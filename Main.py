@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, make_response, session, abort, jsonify
+from flask import Flask, render_template, redirect, request, make_response, session, abort, jsonify,
 from flask_wtf import FlaskForm
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, BooleanField
@@ -8,6 +8,7 @@ import news_api
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+db_session.global_init("db/blogs.sqlite")
 login_manager = LoginManager()
 login_manager.init_app(app)
 
@@ -16,6 +17,7 @@ login_manager.init_app(app)
 def load_user(user_id):
     sessions = db_session.create_session()
     return sessions.query(users.User).get(user_id)
+
 
 class RegisterForm(FlaskForm):
     email = StringField('Почта', validators=[DataRequired()])
@@ -110,6 +112,7 @@ def order():
 
 
 def main():
+    sessions = db_session.create_session()
     db_session.global_init("db/blogs.sqlite")
     app.register_blueprint(news_api.blueprint)
     app.run(port=8080, host="127.0.0.1")
