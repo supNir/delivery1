@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="static/css/Base.css" />
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+        <title>Delivery Best</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-light bg-light" id="Nav">
+                <div class="navbar-brand">
+                    <a href="/"><img src="static/images/shapka.png"></a>
+                    {% if current_user.is_authenticated %}
+                        <button class="Login" id="Button"
+                                onclick="document.location='/logout'">
+                            {{current_user.name}}
+                        </button>
+                    {% else %}
+                        <button class="Login" id="Button"
+                                onclick="document.location='/login'">
+                            <img src="static/images/profile.png" alt="" style="vertical-align:middle">
+                        Войти
+                        </button>
+                        <button id="Button"
+                                onclick="document.location='/register'">
+                            <img src="static/images/login.png" alt="" style="vertical-align:middle">
+                        Регистрация
+                        </button>
+                    {% endif %}
+				</div>
+				<br>
+            </nav>
+        </header>
+        <main role="main">
+            {% block content %}
+            {% endblock %}
+        </main>
+		<a href="#" title="Вернуться к началу страницы" id="BtnTop">Вверх</a>
+        <div class="form-main">
+            <div class="form-info">
+                <p>
+                    2020 Delivery-Best Fr, Inc.
+                </p>
+                <p>Хлопцев Николай - <a href="https://vk.com/supsmaill" target="_blank"><img src="/static/images/vk.png" width="90" height="80"></a></p>
+                <p>Мухин Яков - <a href="https://vk.com/id350341881" target="_blank"><img src="/static/images/vk.png" width="90" height="80"></a></p>
+            </div>
+        </div>
+    </body>
+</html>

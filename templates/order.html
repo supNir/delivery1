@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="static/css/Base.css" />
+    <title>Заказ</title>
+</head>
+<body id="body">
+    <a href="/"><img src="static/images/shapka.png">
+    </a>
+    <div class="container-with-columns">
+        <div class="left-column">
+            <div class="headline">
+                <div>
+                    <h1>
+                        Оформление заказа
+                    </h1>
+                </div>
+            </div>
+            <div class="checkout-form">
+                <div class="checkout-form_section checkout-form_short">
+                    <div class="checkout-form_section-title">
+                        Доставка
+                    </div>
+                    <div class="form-field">
+                        <div class="form-field__wrap">
+                            <label>
+                                <span>
+                                    Ваш номер телефона
+                                </span>
+                                <input type="tel"
+                                       inputmode="text"
+                                       class="input--def">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-field__wrap">
+                            <label class="inp-vis">
+                                <span>
+                                    Ваш адрес
+                                </span>
+                                <input type="text"
+                                       inputmode="text"
+                                       class="input--def">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checkout-form__comment-container">
+                        <div class="checkout-form__comment-title">
+                            Комментарий
+                            <textarea rows="5"
+                                      cols="77"
+                                      name="text"
+                                      class="input--def">
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkout-form__section">
+                    <div class="checkout-form__section-title">
+                        Оплата
+                    </div>
+                    <div class="form-selection">
+                        <label class="form-selection__opinion">
+                            <input type="radio"
+                                   name="payment-selection"
+                                   class="radio-btn--def"
+                                   value="card_online">
+                            <span class="label-text--def">
+                                Онлайн оплата
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="checkout-form-button__container">
+                    <button class="checkout-form-button__area"
+                            onclick="document.location='/Oops'">
+                        Заказать
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
