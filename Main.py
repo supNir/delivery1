@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, make_response, session, abort, jsonify,
+from flask import Flask, render_template, redirect, request, make_response, session, abort, jsonify
 from flask_wtf import FlaskForm
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, BooleanField
@@ -76,7 +76,6 @@ def login():
 @app.route("/")
 @app.route("/Delivery_Best")
 def delivery():
-    sessions = db_session.create_session()
     return render_template("busket.html")
 
 
@@ -112,7 +111,6 @@ def order():
 
 
 def main():
-    sessions = db_session.create_session()
     app.register_blueprint(news_api.blueprint)
     app.run(port=8080, host="127.0.0.1")
 
