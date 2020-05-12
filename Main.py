@@ -113,7 +113,6 @@ def order():
 
 def main():
     sessions = db_session.create_session()
-    db_session.global_init("db/blogs.sqlite")
     app.register_blueprint(news_api.blueprint)
     app.run(port=8080, host="127.0.0.1")
 
