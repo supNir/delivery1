@@ -59,7 +59,7 @@ urllib3==1.25.9
 virtualenv==20.0.18
 virtualenv-clone==0.5.4
 vk-api==11.8.0
-websockets==8.1
+websockets==9.1
 Werkzeug==1.0.1
 wrapt==1.11.2
 WTForms==2.3.1
